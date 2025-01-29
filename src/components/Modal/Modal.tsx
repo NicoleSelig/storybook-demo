@@ -9,6 +9,7 @@ import { useLockBodyScroll } from '../../hooks/useBodyScrollLock'
 import { ModalContent, TopBar, Backdrop } from './Modal.styles'
 
 type ModalProps = {
+  children: React.ReactNode
   isOpen: boolean
   onClose: () => void
 }

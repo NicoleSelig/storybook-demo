@@ -8,6 +8,7 @@ import { Heading } from '../typography'
 import { SidebarContainer, SidebarContent, SidebarFooter, TopBar, Backdrop } from './Sidebar.styles'
 
 type SidebarProps = {
+  children: React.ReactNode
   isOpen: boolean
   title: string
   onClose: () => void

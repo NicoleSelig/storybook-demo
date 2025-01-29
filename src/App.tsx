@@ -17,7 +17,7 @@ export default function App() {
       <StoreProvider store={store}>
         <ThemeProvider theme={theme}>
           <GlobalStyle />
-          <AppRoutes />
+          <AppRoutes>undefined</AppRoutes>
         </ThemeProvider>
       </StoreProvider>
     </Router>

@@ -77,16 +77,15 @@ export const Footer = () => {
           <Logo large logoOnly />
           <FooterCard title="Discover us" links={navigationLinks} />
           <FooterCard title="Our social media" links={socialMediaLinks} />
-          <FooterCard title="Check our apps">
-            <div className="footer-bottom">
-              <img
-                alt="app store link"
-                style={{ width: '120px', marginBottom: '0.5rem' }}
-                src={appStoreBanner}
-              />
-              <img alt="google play link" style={{ width: '120px' }} src={googlePlayBanner} />
-            </div>
-          </FooterCard>
+          <FooterCard title="Check our apps" />
+          <div className="footer-bottom">
+            <img
+              alt="app store link"
+              style={{ width: '120px', marginBottom: '0.5rem' }}
+              src={appStoreBanner}
+            />
+            <img alt="google play link" style={{ width: '120px' }} src={googlePlayBanner} />
+          </div>
         </FooterTop>
       </div>
     </FooterContainer>

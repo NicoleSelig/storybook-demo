@@ -3,11 +3,12 @@ import * as React from 'react'
 import { createPortal } from 'react-dom'
 
 type Props = {
+  children: React.ReactNode
   selector: string
 }
 
 export const Portal: React.FC<Props> = ({ children, selector }) => {
-  const ref = useRef<Element>()
+  const ref = useRef<Element>(null)
 
   useEffect(() => {
     const element = document.querySelector<Element>(selector)
