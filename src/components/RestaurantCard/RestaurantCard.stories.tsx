@@ -1,41 +1,43 @@
-// eslint-disable-next-line storybook/story-exports
-export default {}
+import { Meta, StoryObj } from '@storybook/react'
+import { restaurants } from 'stub/restaurants'
 
-// import { ComponentMeta, ComponentStory } from '@storybook/react'
-// import { restaurants } from 'stub/restaurants'
+import { RestaurantCard } from './RestaurantCard'
 
-// import { RestaurantCard } from './RestaurantCard'
+const meta: Meta<typeof RestaurantCard> = {
+  title: 'Components/RestaurantCard',
+  component: RestaurantCard,
+  args: {
+    ...restaurants[0],
+  },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/3Q1HTCalD0lJnNvcMoEw1x/Mealdrop?node-id=1091-2986&t=BLZzE2QFi13McAkk-4',
+    },
+  },
+}
+export default meta
 
-// export default {
-//   title: 'Components/RestaurantCard',
-//   component: RestaurantCard,
-//   args: {
-//     ...restaurants[0],
-//   },
-//   parameters: {
-//     design: {
-//       type: 'figma',
-//       url: 'https://www.figma.com/file/3Q1HTCalD0lJnNvcMoEw1x/Mealdrop?node-id=1091-2986&t=BLZzE2QFi13McAkk-4',
-//     },
-//   },
-// } as ComponentMeta<typeof RestaurantCard>
+type RestaurantCardStory = StoryObj<typeof RestaurantCard>
 
-// const Template: ComponentStory<typeof RestaurantCard> = (args) => <RestaurantCard {...args} />
-
-// export const Default = Template.bind({})
+export const Default: RestaurantCardStory = {}
 // Default.play = async ({ canvasElement, args }) => {
 //   console.log('CANVAS: ', JSON.stringify(canvasElement, null, 2))
 // }
 
-// export const New = Template.bind({})
-// New.args = {
-//   isNew: true,
-// }
-// export const Closed = Template.bind({})
-// Closed.args = {
-//   isClosed: true,
-// }
-// export const Loading = Template.bind({})
-// Closed.args = {
-//   isLoading: true,
-// }
+export const New: RestaurantCardStory = {
+  args: {
+    isNew: true,
+  },
+}
+export const Closed: RestaurantCardStory = {
+  args: {
+    isClosed: true,
+  },
+}
+
+export const Loading: RestaurantCardStory = {
+  args: {
+    isLoading: true,
+  },
+}
