@@ -1,9 +1,6 @@
 import type { Preview } from '@storybook/react'
 import { globalDecorators } from './decorators'
-import { INITIAL_VIEWPORTS, MINIMAL_VIEWPORTS } from '@storybook/addon-viewport'
-import { viewports as breakpoints } from '../src/styles/breakpoints'
-
-console.log(INITIAL_VIEWPORTS)
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 
 const preview: Preview = {
   decorators: globalDecorators,

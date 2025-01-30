@@ -19,8 +19,9 @@ const Container = styled.div(
 )
 
 type BadgeProps = {
+  /** What the badge will display */
   text: string
-  // We use classname to make the component extensible by styled-components
+  /** We use classname to make the component extensible by styled-components */
   className?: string
 }
 

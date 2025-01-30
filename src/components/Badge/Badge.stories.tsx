@@ -8,6 +8,7 @@ const meta: Meta<typeof Badge> = {
   args: {
     text: 'Comfort food',
   },
+  // tags: ['autodocs'],
   parameters: {
     design: {
       type: 'figma',
