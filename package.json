@@ -31,6 +31,7 @@
     "prettier": "prettier --write .",
     "pre-commit": "lint-staged",
     "storybook": "storybook dev -p 6006",
+    "test-storybook": "test-storybook",
     "build-storybook": "storybook build"
   },
   "eslintConfig": {
@@ -57,11 +58,14 @@
     "@storybook/addon-onboarding": "^8.5.1",
     "@storybook/addon-viewport": "^8.5.2",
     "@storybook/blocks": "^8.5.1",
+    "@storybook/jest": "^0.2.3",
     "@storybook/preset-create-react-app": "^8.5.1",
     "@storybook/preview-api": "^8.5.2",
     "@storybook/react": "^8.5.1",
     "@storybook/react-webpack5": "^8.5.1",
     "@storybook/test": "^8.5.1",
+    "@storybook/test-runner": "^0.21.0",
+    "@storybook/testing-library": "^0.2.2",
     "@types/jest": "^27.4.0",
     "@types/jest-axe": "^3.5.3",
     "@types/node": "^15.12.3",

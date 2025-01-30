@@ -1,13 +1,17 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { restaurants } from 'stub/restaurants'
+import { userEvent, within, fn } from '@storybook/test'
+import { expect } from '@storybook/jest'
 
 import { RestaurantCard } from './RestaurantCard'
 
 const meta: Meta<typeof RestaurantCard> = {
   title: 'Components/RestaurantCard',
   component: RestaurantCard,
+  argTypes: { onClick: { action: 'card-clicked' } },
   args: {
     ...restaurants[0],
+    onClick: fn(), // mocking the onClick function for interaction tests.
   },
   parameters: {
     design: {
@@ -20,19 +24,28 @@ export default meta
 
 type RestaurantCardStory = StoryObj<typeof RestaurantCard>
 
-export const Default: RestaurantCardStory = {}
-// Default.play = async ({ canvasElement, args }) => {
-//   console.log('CANVAS: ', JSON.stringify(canvasElement, null, 2))
-// }
+export const Default: RestaurantCardStory = {
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement)
+    await userEvent.click(canvas.getByTestId('restaurant-card'))
+    await expect(args.onClick).toHaveBeenCalled()
+  },
+}
 
 export const New: RestaurantCardStory = {
   args: {
     isNew: true,
   },
 }
+
 export const Closed: RestaurantCardStory = {
   args: {
     isClosed: true,
+  },
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement)
+    await userEvent.click(canvas.getByTestId('restaurant-card'))
+    await expect(args.onClick).not.toHaveBeenCalled()
   },
 }
 

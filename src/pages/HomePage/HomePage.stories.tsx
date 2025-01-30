@@ -21,8 +21,8 @@ type HomePageStory = StoryObj<typeof HomePage>
 
 export const Default: HomePageStory = {
   parameters: {
-    // msw: {
-    //   handlers: [http.get(BASE_URL, () => HttpResponse.json({ error: 'Error' }, { status: 404 }))],
-    // },
+    msw: {
+      handlers: [http.get(BASE_URL, () => HttpResponse.json(restaurants))],
+    },
   },
 }
