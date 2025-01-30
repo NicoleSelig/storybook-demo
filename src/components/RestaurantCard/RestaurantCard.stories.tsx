@@ -45,10 +45,10 @@ export const Closed: RestaurantCardStory = {
     isClosed: true,
   },
   play: async ({ canvasElement, args, step }) => {
-    step('it should not be clickable', async () => {
+    await step('it should not be clickable', async () => {
       const canvas = within(canvasElement)
       await userEvent.click(canvas.getByTestId('restaurant-card'))
-      await expect(args.onClick).toHaveBeenCalled()
+      await expect(args.onClick).not.toHaveBeenCalled()
     })
   },
 }
