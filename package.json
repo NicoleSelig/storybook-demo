@@ -5,7 +5,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.1",
     "axios": "^0.24.0",
-    "msw": "^2.7.0",
+    "msw": "^2.0.14",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hooks-helper": "^1.6.0",
@@ -85,6 +85,7 @@
     "jest-axe": "^4.1.0",
     "jest-canvas-mock": "^2.3.1",
     "lint-staged": ">=10",
+    "msw-storybook-addon": "^2.0.4",
     "prettier": "^2.5.0",
     "prop-types": "^15.8.1",
     "react-is": "^17.0.2",
@@ -95,5 +96,10 @@
   "lint-staged": {
     "*.{ts,tsx}": "eslint --fix",
     "*.{html,md}": "prettier --write"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }

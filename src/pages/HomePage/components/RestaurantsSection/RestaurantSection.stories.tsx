@@ -20,9 +20,9 @@ type RestaurantSectionStory = StoryObj<typeof RestaurantsSection>
 
 export const Default: RestaurantSectionStory = {
   parameters: {
-    // msw: {
-    //   handlers: [http.get(BASE_URL, () => HttpResponse.json(restaurants))],
-    // },
+    msw: {
+      handlers: [http.get(BASE_URL, () => HttpResponse.json(restaurants))],
+    },
   },
   args: {
     title: 'Our favorite picks',
@@ -31,9 +31,9 @@ export const Default: RestaurantSectionStory = {
 
 export const Loading: RestaurantSectionStory = {
   parameters: {
-    // msw: {
-    //   handlers: [http.get(BASE_URL, () => delay('infinite'))],
-    // },
+    msw: {
+      handlers: [http.get(BASE_URL, () => delay('infinite'))],
+    },
   },
   args: {
     ...Default.args,

@@ -1,9 +1,13 @@
 import type { Preview } from '@storybook/react'
 import { globalDecorators } from './decorators'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
+import { initialize, mswLoader } from 'msw-storybook-addon'
+
+initialize()
 
 const preview: Preview = {
   decorators: globalDecorators,
+  loaders: [mswLoader],
   parameters: {
     viewport: {
       viewports: INITIAL_VIEWPORTS
@@ -33,3 +37,5 @@ export const globalTypes = {
     },
   },
 }
+
+
