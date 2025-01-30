@@ -25,10 +25,12 @@ export default meta
 type RestaurantCardStory = StoryObj<typeof RestaurantCard>
 
 export const Default: RestaurantCardStory = {
-  play: async ({ canvasElement, args }) => {
-    const canvas = within(canvasElement)
-    await userEvent.click(canvas.getByTestId('restaurant-card'))
-    await expect(args.onClick).toHaveBeenCalled()
+  play: async ({ canvasElement, args, step }) => {
+    await step('it should be clickable', async () => {
+      const canvas = within(canvasElement)
+      await userEvent.click(canvas.getByTestId('restaurant-card'))
+      await expect(args.onClick).toHaveBeenCalled()
+    })
   },
 }
 
@@ -42,10 +44,12 @@ export const Closed: RestaurantCardStory = {
   args: {
     isClosed: true,
   },
-  play: async ({ canvasElement, args }) => {
-    const canvas = within(canvasElement)
-    await userEvent.click(canvas.getByTestId('restaurant-card'))
-    await expect(args.onClick).not.toHaveBeenCalled()
+  play: async ({ canvasElement, args, step }) => {
+    step('it should not be clickable', async () => {
+      const canvas = within(canvasElement)
+      await userEvent.click(canvas.getByTestId('restaurant-card'))
+      await expect(args.onClick).toHaveBeenCalled()
+    })
   },
 }
 
