@@ -1,7 +1,8 @@
 // .storybook/decorators.tsx
 import { ThemeProvider } from 'styled-components'
 import { Decorator } from '@storybook/react'
-import { store } from '../src/app-state'
+import { configureStore } from '@reduxjs/toolkit'
+import { rootReducer } from '../src/app-state'
 import { Provider as StoreProvider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 
@@ -17,7 +18,11 @@ export const withRouter: Decorator = (Story) => {
   )
 }
 
-export const withStore: Decorator = (Story) => {
+export const withStore: Decorator = (Story, { parameters }) => {
+  const store = configureStore({
+    reducer: rootReducer,
+    preloadedState: parameters.store?.initialState
+  })
   return (
     <StoreProvider store={store}>
       <Story />

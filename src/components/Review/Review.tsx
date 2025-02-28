@@ -34,7 +34,7 @@ const getReview = (rating?: number) => {
 export const Review = ({ rating }: ReviewProps) => (
   <Wrapper>
     <Body type="span" size="S" className="review-text">
-      <div>{getReview(rating)}</div>
+      <div data-testid="review-text">{getReview(rating)}</div>
     </Body>
   </Wrapper>
 )
